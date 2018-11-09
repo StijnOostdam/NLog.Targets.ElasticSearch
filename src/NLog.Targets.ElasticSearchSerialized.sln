@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.ElasticSearch", "NLog.Targets.ElasticSearch\NLog.Targets.ElasticSearch.csproj", "{B0B84774-1B40-4735-A5CE-B08C4FB3BA3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLog.Targets.ElasticSearchSerialized", "NLog.Targets.ElasticSearch\NLog.Targets.ElasticSearchSerialized.csproj", "{B0B84774-1B40-4735-A5CE-B08C4FB3BA3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.Targets.ElasticSearch.Tests", "NLog.Targets.ElasticSearch.Tests\NLog.Targets.ElasticSearch.Tests.csproj", "{A1E076FE-6E3D-4AF1-838C-3A2A6DFE8006}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLog.Targets.ElasticSearchSerialized.Tests", "NLog.Targets.ElasticSearch.Tests\NLog.Targets.ElasticSearchSerialized.Tests.csproj", "{A1E076FE-6E3D-4AF1-838C-3A2A6DFE8006}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A25FE2C-A8A9-4BE2-A51B-6CFF72368924}
 	EndGlobalSection
 EndGlobal

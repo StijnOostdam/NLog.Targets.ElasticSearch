@@ -9,7 +9,7 @@ namespace NLog.Targets.ElasticSearch.Tests
         [Fact(Skip ="Integration")]
         public void SimpleLogTest()
         {
-            var elasticTarget = new ElasticSearchTarget();
+            var elasticTarget = new ElasticSearchSerializedTarget();
 
             var rule = new LoggingRule("*", elasticTarget);
             rule.EnableLoggingForLevel(LogLevel.Info);
@@ -29,7 +29,7 @@ namespace NLog.Targets.ElasticSearch.Tests
         [Fact(Skip = "Integration")]
         public void ExceptionTest()
         {
-            var elasticTarget = new ElasticSearchTarget();
+            var elasticTarget = new ElasticSearchSerializedTarget();
 
             var rule = new LoggingRule("*", elasticTarget);
             rule.EnableLoggingForLevel(LogLevel.Error);
@@ -51,7 +51,7 @@ namespace NLog.Targets.ElasticSearch.Tests
         [Fact(Skip = "Integration")]
         public void ReadFromConfigTest()
         {
-            LogManager.Configuration = new XmlLoggingConfiguration("NLog.Targets.ElasticSearch.Tests.dll.config");
+            LogManager.Configuration = new XmlLoggingConfiguration("NLog.Targets.ElasticSearchSerialized.Tests.dll.config");
 
             var logger = LogManager.GetLogger("Example");
 
