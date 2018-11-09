@@ -89,7 +89,12 @@ namespace NLog.Targets.ElasticSearch
         /// </summary>
         public bool ThrowExceptions { get; set; }
 
-        public ElasticSearchTarget()
+		/// <summary>
+		/// DANGEROUS, NEVER USE IN PRODUCTION ENVIRONMENT. Gets or sets whether the connection should accept all certificates, useful for test environments.
+		/// </summary>
+		public bool DangerousAcceptAllCertificates { get; set; } = false;
+
+		public ElasticSearchTarget()
         {
             Name = "ElasticSearch";
         }
@@ -113,7 +118,11 @@ namespace NLog.Targets.ElasticSearch
             if (DisableAutomaticProxyDetection)
                 config.DisableAutomaticProxyDetection();
 
+			if (DangerousAcceptAllCertificates)
+				config.ServerCertificateValidationCallback(CertificateValidations.AllowAll);
+
             _client = new ElasticLowLevelClient(config);
+
 
             if (!string.IsNullOrEmpty(ExcludedProperties))
                 _excludedProperties = ExcludedProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();

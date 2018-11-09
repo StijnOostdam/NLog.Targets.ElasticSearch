@@ -67,5 +67,10 @@ namespace NLog.Targets.ElasticSearch
         /// Gets or sets an alertnative serializer for the elasticsearch client to use.
         /// </summary>
         IElasticsearchSerializer ElasticsearchSerializer { get; set; }
+
+		/// <summary>
+		/// DANGEROUS, NEVER USE IN PRODUCTION ENVIRONMENT. Gets or sets whether the connection should accept all certificates, useful for test environments.
+		/// </summary>
+		bool DangerousAcceptAllCertificates { get; set; }
     }
 }
